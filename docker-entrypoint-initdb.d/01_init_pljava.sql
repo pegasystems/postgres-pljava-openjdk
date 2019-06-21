@@ -2,7 +2,7 @@ SET pljava.libjvm_location TO '/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/s
 ALTER DATABASE postgres SET pljava.libjvm_location FROM CURRENT;
 ALTER USER postgres SET SEARCH_PATH TO public,sqlj;
 CREATE EXTENSION pljava;
-SELECT sqlj.install_jar('file:///pljava-examples.jar', 'examples', true);
+SELECT sqlj.install_jar('file:///pljava/pljava-examples/target/pljava-examples-1.6.0.jar', 'examples', true);
 SHOW search_path;
 SELECT sqlj.get_classpath('javatest');
 SELECT sqlj.set_classpath('javatest', 'examples');
