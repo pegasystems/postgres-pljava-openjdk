@@ -18,6 +18,6 @@ RUN apt-get update && \
     apt-get -y remove --purge --auto-remove git ca-certificates g++ maven postgresql-server-dev-11 libpq-dev libecpg-dev openjdk-8-jdk libkrb5-dev libssl-dev && \
     apt-get --fix-missing -y --force-yes --no-install-recommends install openjdk-8-jdk-headless && \
     apt-get -y clean autoclean autoremove && \
-    rm -rf ~/.m2 /var/lib/apt/lists/* /tmp/* /var/tmp/* /pljava
+    rm -rf ~/.m2 /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD /docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
