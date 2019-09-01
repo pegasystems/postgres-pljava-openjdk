@@ -4,6 +4,7 @@ ENV TERM xterm-256color
 
 RUN apt-get update && \
     apt-get --fix-missing -y --force-yes --no-install-recommends install git ca-certificates && \
+    rm -rf /pljava && \
     git clone https://github.com/tada/pljava.git && \
     apt-get --fix-missing -y --force-yes --no-install-recommends install g++ maven && \
     apt-get --fix-missing -y --force-yes --no-install-recommends install postgresql-server-dev-11 libpq-dev && \
